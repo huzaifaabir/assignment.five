@@ -20,7 +20,6 @@ document.getElementById('noakhali-btn').addEventListener('click', function () {
     const donateAmount = convertFloat(getValue('noakhali-input'));
     if (coinAmountInt < donateAmount) {
         alert('You have no enough Balance');
-        document.getElementById('noakhali-btn').removeAttribute('onclick') ;
         return
     }
     else if (isNaN(donateAmount)) {
