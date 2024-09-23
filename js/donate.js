@@ -11,12 +11,16 @@ getId('history-btn').addEventListener('click', function () {
 })
 
 const date = new Date();
+
+
+// getId('noakhali-btn').removeAttribute('onclick');
 // noakhali donate start 
 document.getElementById('noakhali-btn').addEventListener('click', function () {
     const coinAmountInt = convertFloat(getInnerText('coin-amount'));
     const donateAmount = convertFloat(getValue('noakhali-input'));
     if (coinAmountInt < donateAmount) {
         alert('You have no enough Balance');
+        document.getElementById('noakhali-btn').removeAttribute('onclick') ;
         return
     }
     else if (isNaN(donateAmount)) {
@@ -28,6 +32,8 @@ document.getElementById('noakhali-btn').addEventListener('click', function () {
     getId('coin-amount').innerText = dashboard;
     const donate = convertFloat(getInnerText('noakhali-amount'));
     getId('noakhali-amount').innerText = donate + donateAmount;
+    getId('noakhali-input').value = '';
+
 
     // history page content js strat
 
@@ -59,6 +65,7 @@ document.getElementById('feni-btn').addEventListener('click', function () {
     getId('coin-amount').innerText = dashboard;
     const donate = convertFloat(getInnerText('feni-amount'));
     getId('feni-amount').innerText = donate + donateAmount;
+    getId('feni-input').value = '';
 
     
     // history page content js strat
@@ -90,6 +97,8 @@ document.getElementById('quata-btn').addEventListener('click', function () {
     getId('coin-amount').innerText = dashboard;
     const donate = convertFloat(getInnerText('quata-amount'));
     getId('quata-amount').innerText = donate + donateAmount;
+    getId('quata-input').value = '';
+    getId('check');
 
 
     
@@ -104,3 +113,5 @@ document.getElementById('quata-btn').addEventListener('click', function () {
 })
 // Quata donate end
 
+
+// modal control 
