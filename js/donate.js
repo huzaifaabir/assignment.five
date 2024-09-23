@@ -113,5 +113,5 @@ document.getElementById('quata-btn').addEventListener('click', function () {
 })
 // Quata donate end
 
+//  switch window
 
-// modal control 
