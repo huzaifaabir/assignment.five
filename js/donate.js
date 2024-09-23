@@ -1,61 +1,106 @@
-// total balance 
-const feniDonate = getValue('feni-input');
-const qataDonate = getValue('quata-input');
 
+getId('donation-btn').addEventListener('click', function () {
+    this.classList.add('bg-btn');
+    getId('history-btn').classList.remove('bg-btn');
+    showSection('donation');
+})
+getId('history-btn').addEventListener('click', function () {
+    this.classList.add('bg-btn');
+    getId('donation-btn').classList.remove('bg-btn');
+    showSection('history');
+})
+
+const date = new Date();
 // noakhali donate start 
 document.getElementById('noakhali-btn').addEventListener('click', function () {
     const coinAmountInt = convertFloat(getInnerText('coin-amount'));
-    const DonateAmount = convertFloat(getValue('noakhali-input'));
-    if (coinAmountInt < DonateAmount) {
+    const donateAmount = convertFloat(getValue('noakhali-input'));
+    if (coinAmountInt < donateAmount) {
         alert('You have no enough Balance');
         return
     }
-    else if (isNaN(DonateAmount)) {
+    else if (isNaN(donateAmount)) {
         alert('Invaid Donate Amount');
         return
 
     }
-    const dashboard = coinAmountInt - DonateAmount;
+    const dashboard = coinAmountInt - donateAmount;
     getId('coin-amount').innerText = dashboard;
     const donate = convertFloat(getInnerText('noakhali-amount'));
-    getId('noakhali-amount').innerText = donate + DonateAmount;
+    getId('noakhali-amount').innerText = donate + donateAmount;
+
+    // history page content js strat
+
+    const donateHistory = document.getElementById('donate-history');
+    donateHistory.classList.remove('hidden');
+    const createDiv = document.createElement('div');
+    createDiv.classList.add('border-2','rounded-xl','border-neutral-200','p-8','my-6')
+    createDiv.innerHTML=`<h1 class="font-bold text-xl mb-4">${donateAmount} Taka is Donated for famine-2024 at Noakhali, Bangladesh</h1> <p class="text-base text-neutral-500">${date}</p>`;
+    donateHistory.appendChild(createDiv);
 })
 // noakhali donate end
+
+
+
 // feni donate start 
 document.getElementById('feni-btn').addEventListener('click', function () {
     const coinAmountInt = convertFloat(getInnerText('coin-amount'));
-    const DonateAmount = convertFloat(getValue('feni-input'));
-    if (coinAmountInt < DonateAmount) {
+    const donateAmount = convertFloat(getValue('feni-input'));
+    if (coinAmountInt < donateAmount) {
         alert('You have no enough Balance');
         return
     }
-    else if (isNaN(DonateAmount)) {
+    else if (isNaN(donateAmount)) {
         alert('Invaid Donate Amount');
         return
 
     }
-    const dashboard = coinAmountInt - DonateAmount;
+    const dashboard = coinAmountInt - donateAmount;
     getId('coin-amount').innerText = dashboard;
     const donate = convertFloat(getInnerText('feni-amount'));
-    getId('feni-amount').innerText = donate + DonateAmount;
+    getId('feni-amount').innerText = donate + donateAmount;
+
+    
+    // history page content js strat
+
+    const donateHistory = document.getElementById('donate-history');
+    donateHistory.classList.remove('hidden');
+    const createDiv = document.createElement('div');
+    createDiv.classList.add('border-2','rounded-xl','border-neutral-200','p-8','my-6')
+    createDiv.innerHTML=`<h1 class="font-bold text-xl mb-4">${donateAmount} Taka is Donated for Flood Relief in Feni,Bangladesh</h1> <p class="text-base text-neutral-500">${date}</p>`;
+    donateHistory.appendChild(createDiv);
+
+
 })
 // feni donate end
 // Quata donate start 
 document.getElementById('quata-btn').addEventListener('click', function () {
     const coinAmountInt = convertFloat(getInnerText('coin-amount'));
-    const DonateAmount = convertFloat(getValue('quata-input'));
-    if (coinAmountInt < DonateAmount) {
+    const donateAmount = convertFloat(getValue('quata-input'));
+    if (coinAmountInt < donateAmount) {
         alert('You have no enough Balance');
         return
     }
-    else if (isNaN(DonateAmount)) {
+    else if (isNaN(donateAmount)) {
         alert('Invaid Donate Amount');
         return
 
     }
-    const dashboard = coinAmountInt - DonateAmount;
+    const dashboard = coinAmountInt - donateAmount;
     getId('coin-amount').innerText = dashboard;
     const donate = convertFloat(getInnerText('quata-amount'));
-    getId('quata-amount').innerText = donate + DonateAmount;
+    getId('quata-amount').innerText = donate + donateAmount;
+
+
+    
+    // history page content js strat
+
+    const donateHistory = document.getElementById('donate-history');
+    donateHistory.classList.remove('hidden');
+    const createDiv = document.createElement('div');
+    createDiv.classList.add('border-2','rounded-xl','border-neutral-200','p-8','my-6')
+    createDiv.innerHTML=`<h1 class="font-bold text-xl mb-4">${donateAmount} Taka is Donated for Aid for Injured in the Quota Movement, Bangladesh</h1> <p class="text-base text-neutral-500">${date}</p>`;
+    donateHistory.appendChild(createDiv);
 })
 // Quata donate end
+
