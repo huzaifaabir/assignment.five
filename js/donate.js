@@ -33,6 +33,7 @@ document.getElementById('noakhali-btn').addEventListener('click', function () {
     const donate = convertFloat(getInnerText('noakhali-amount'));
     getId('noakhali-amount').innerText = donate + donateAmount;
     getId('noakhali-input').value = '';
+    getId('my-modal').showModal();
 
 
     // history page content js strat
@@ -66,6 +67,7 @@ document.getElementById('feni-btn').addEventListener('click', function () {
     const donate = convertFloat(getInnerText('feni-amount'));
     getId('feni-amount').innerText = donate + donateAmount;
     getId('feni-input').value = '';
+    getId('my-modal').showModal();
 
     
     // history page content js strat
@@ -76,6 +78,7 @@ document.getElementById('feni-btn').addEventListener('click', function () {
     createDiv.classList.add('border-2','rounded-xl','border-neutral-200','p-8','my-6')
     createDiv.innerHTML=`<h1 class="font-bold text-xl mb-4">${donateAmount} Taka is Donated for Flood Relief in Feni,Bangladesh</h1> <p class="text-base text-neutral-500">${date}</p>`;
     donateHistory.appendChild(createDiv);
+    
 
 
 })
@@ -98,7 +101,8 @@ document.getElementById('quata-btn').addEventListener('click', function () {
     const donate = convertFloat(getInnerText('quata-amount'));
     getId('quata-amount').innerText = donate + donateAmount;
     getId('quata-input').value = '';
-    getId('check');
+    getId('my-modal').showModal();
+
 
 
     
