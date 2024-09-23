@@ -22,5 +22,6 @@ function blog(){
     window.location.href = '/index.html';
 }
 function home(){
-    window.history.back();
+    window.location.href = '/blog.html';
+    
 }
