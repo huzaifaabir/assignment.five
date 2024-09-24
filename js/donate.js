@@ -23,7 +23,7 @@ document.getElementById('noakhali-btn').addEventListener('click', function () {
         return
     }
     else if (isNaN(donateAmount)) {
-        alert('Invaid Donate Amount');
+        alert('Invalid Donate Amount');
         return
 
     }
@@ -46,8 +46,6 @@ document.getElementById('noakhali-btn').addEventListener('click', function () {
 })
 // noakhali donate end
 
-
-
 // feni donate start 
 document.getElementById('feni-btn').addEventListener('click', function () {
     const coinAmountInt = convertFloat(getInnerText('coin-amount'));
@@ -57,7 +55,7 @@ document.getElementById('feni-btn').addEventListener('click', function () {
         return
     }
     else if (isNaN(donateAmount)) {
-        alert('Invaid Donate Amount');
+        alert('Invalid Donate Amount');
         return
 
     }
@@ -67,6 +65,7 @@ document.getElementById('feni-btn').addEventListener('click', function () {
     getId('feni-amount').innerText = donate + donateAmount;
     getId('feni-input').value = '';
     getId('my-modal').showModal();
+    
 
     
     // history page content js strat
@@ -91,7 +90,7 @@ document.getElementById('quata-btn').addEventListener('click', function () {
         return
     }
     else if (isNaN(donateAmount)) {
-        alert('Invaid Donate Amount');
+        alert('Invalid Donate Amount');
         return
 
     }
@@ -117,4 +116,3 @@ document.getElementById('quata-btn').addEventListener('click', function () {
 // Quata donate end
 
 //  switch window
-
